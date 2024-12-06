@@ -1,0 +1,8 @@
+
+ReportPro/ProjectFiles/NetSolution/*.vs
+ReportPro/ProjectFiles/NetSolution/bin
+ReportPro/ProjectFiles/NetSolution/obj
+ReportPro/ProjectFiles/NetSolution/Private
+ReportPro/ProjectFiles/NetSolution/*.references
+ReportPro/ProjectFiles/UserDefinedModule.xml
+
