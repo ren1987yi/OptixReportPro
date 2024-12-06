@@ -1,2 +1,5 @@
 Name: NetLogic
 Type: NetLogicCategoryFolder
+Children:
+- Name: EChartSSR_RuntimeNetLogic
+  Type: NetLogic

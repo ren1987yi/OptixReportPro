@@ -1,2 +1,35 @@
 Name: Model
 Type: ModelCategoryFolder
+Children:
+- Name: TestData
+  Type: BaseObjectType
+  Children:
+  - Name: BatchNo
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: V1
+    Type: BaseDataVariableType
+    DataType: Float
+  - Name: V2
+    Type: BaseDataVariableType
+    DataType: Float
+  - Name: V3
+    Type: BaseDataVariableType
+    DataType: Float
+  - Name: V4
+    Type: BaseDataVariableType
+    DataType: Float
+  - Name: V5
+    Type: BaseDataVariableType
+    DataType: Float
+  - Name: V6
+    Type: BaseDataVariableType
+    DataType: Float
+  - Name: V7
+    Type: BaseDataVariableType
+    DataType: Float
+  - Name: V8
+    Type: BaseDataVariableType
+    DataType: Float
+  - Name: SimValue_RuntimeNetLogic
+    Type: NetLogic
