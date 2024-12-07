@@ -16,6 +16,10 @@ using FTOptix.SQLiteStore;
 using System.Collections.Generic;
 using System.IO;
 using FTOptix.WebUI;
+using EChartDotNet.Entities;
+using EChartDotNet.Entities.series;
+using EChartDotNet.Entities.data;
+using EChartDotNet;
 #endregion
 
 public class Report_Demo_RuntimeNetLogic : BaseNetLogic
@@ -47,7 +51,7 @@ public class Report_Demo_RuntimeNetLogic : BaseNetLogic
 
 
             var option = getGraph1Option();
-            var result = EChartSSR.Instance.SaveAsSVGFile(1000, 1000, option, uriSVG.Uri);
+            var result = EChartSSR.Render.Instance.RenderObjToSvgFile(1000, 1000, option, uriSVG.Uri);
             if (result)
             {
                 var v = LogicObject.GetVariable("graph1_Path");
@@ -69,7 +73,7 @@ public class Report_Demo_RuntimeNetLogic : BaseNetLogic
 
 
             var option = getGraph2Option();
-            var result = EChartSSR.Instance.SaveAsSVGFile(1000, 1000, option, uriSVG.Uri);
+            var result = EChartSSR.Render.Instance.RenderOptionStringToSvgFile(1000, 1000, option, uriSVG.Uri);
             if (result)
             {
                 var v = LogicObject.GetVariable("graph2_Path");
@@ -90,8 +94,9 @@ public class Report_Demo_RuntimeNetLogic : BaseNetLogic
 
 
 
-            var option = getGraph3Option();
-            var result = EChartSSR.Instance.SaveAsSVGFile(1000, 1000, option, uriSVG.Uri);
+            var option = getGraph3Option_V2();
+            var option2 = JsonTools.ObjectToJson2(option);
+            var result = EChartSSR.Render.Instance.RenderObjStringToSvgFile(1000, 1000, option2, uriSVG.Uri);
             if (result)
             {
                 var v = LogicObject.GetVariable("graph3_Path");
@@ -112,7 +117,7 @@ public class Report_Demo_RuntimeNetLogic : BaseNetLogic
 
 
             var option = getGraph4Option();
-            var result = EChartSSR.Instance.SaveAsSVGFile(1000, 1000, option, uriSVG.Uri);
+            var result = EChartSSR.Render.Instance.RenderOptionStringToSvgFile(1000, 1000, option, uriSVG.Uri);
             if (result)
             {
                 var v = LogicObject.GetVariable("graph4_Path");
@@ -133,7 +138,7 @@ public class Report_Demo_RuntimeNetLogic : BaseNetLogic
 
 
             var option = getGraph5Option();
-            var result = EChartSSR.Instance.SaveAsSVGFile(1000, 1000, option, uriSVG.Uri);
+            var result = EChartSSR.Render.Instance.RenderOptionStringToSvgFile(1000, 1000, option, uriSVG.Uri);
             if (result)
             {
                 var v = LogicObject.GetVariable("graph5_Path");
@@ -336,6 +341,43 @@ public class Report_Demo_RuntimeNetLogic : BaseNetLogic
 
         var a = Newtonsoft.Json.JsonConvert.SerializeObject(option);
 
+        return option;
+    }
+
+
+    private ChartOption getGraph3Option_V2()
+    {
+        var option = new ChartOption();
+        option.title = new Title[]
+        {
+            new Title()
+            {
+                show = true,
+                text = "this is the chart option generate"
+            }
+        };
+
+
+        option.legend = new Legend() { show = true, top = "5%", left = "center" };
+
+        option.series = new List<object>()
+            {
+                new Pie()
+                {
+                    radius = new object[]{"40%","70%"},
+                    label = new EChartDotNet.Entities.style.StyleLabel(){show= true,position =  StyleLabelTyle.center},
+                    data = new List<Data>()
+                    {
+                        new Data(){value = rnd.Next(100),name="a"},
+                        new Data(){value = rnd.Next(100),name="b"},
+                        new Data(){value = rnd.Next(100),name="c"},
+                        new Data(){value = rnd.Next(100),name="d"},
+                        new Data(){value = rnd.Next(100),name="e"},
+
+                    }
+
+                }
+            };
         return option;
     }
 

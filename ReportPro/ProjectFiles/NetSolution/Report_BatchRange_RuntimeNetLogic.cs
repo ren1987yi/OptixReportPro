@@ -82,7 +82,7 @@ public class Report_BatchRange_RuntimeNetLogic : BaseNetLogic
         var svgfile = root + $"_{index}.svg";
         var uriSVG = ResourceUri.FromProjectRelativePath(svgfile);
 
-        var result = EChartSSR.Instance.SaveAsSVGFile(width, height, option, uriSVG.Uri);
+        var result = EChartSSR.Render.Instance.RenderObjToSvgFile(width, height, option, uriSVG.Uri);
         if (result)
         {
             var v = LogicObject.GetVariable($"graph1_path");

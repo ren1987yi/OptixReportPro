@@ -342,377 +342,78 @@ Children:
       Type: DynamicLink
       DataType: NodePath
       Value: "/Objects/ReportPro@BrowseName"
-  - Name: ReportTest1
-    Type: ReportTest
+  - Name: NavigationPanel1
+    Type: NavigationPanel
     Children:
-    - Name: HL
-      Type: RowLayout
+    - Name: Panels
+      Type: BaseObjectType
       Children:
-      - Name: P
-        Type: Panel
+      - Name: Panel1
+        Type: NavigationPanelItem
         Children:
-        - Name: VL
-          Type: ColumnLayout
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+        - Name: Panel
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/ReportPro/UI/Screens/ReportTest"
           Children:
-          - Name: Label1
-            Type: Label
-          - Name: Label2
-            Type: Label
-          - Name: dtStart
-            Type: DateTimePicker
-            Children:
-            - Name: Value
-              Type: BaseDataVariableType
-              DataType: DateTime
-          - Name: Label3
-            Type: Label
-          - Name: dtEnd
-            Type: DateTimePicker
-            Children:
-            - Name: Value
-              Type: BaseDataVariableType
-              DataType: DateTime
-          - Name: btQueryWithTime
-            Type: Button
-            Children:
-            - Name: MouseClickEventHandler1
-              Type: EventHandler
-              Children:
-              - Name: ListenEventType
-                Type: PropertyType
-                DataType: NodeId
-                Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
-              - Name: MethodsToCall
-                Type: BaseObjectType
-                Children:
-                - Name: MethodContainer1
-                  Type: BaseObjectType
-                  Children:
-                  - Name: ObjectPointer
-                    Type: NodePointer
-                    DataType: NodeId
-                    Value: "/Objects/ReportPro/Reports/Report_TimeRange/Report_TimeRange_RuntimeNetLogic"
-                    Children:
-                    - Name: Kind
-                      Type: PropertyType
-                      DataType: NodeId
-                      Value: "/Types/ObjectTypes/BaseObjectType"
-                  - Name: Method
-                    Type: BaseDataVariableType
-                    DataType: String
-                    Value: "Query"
-                  - Name: InputArguments
-                    Type: BaseObjectType
-                    Children:
-                    - Name: outputPdfFolder
-                      Type: BaseDataVariableType
-                      DataType: String
-                      Value: "pdfs/temp"
-                    - Name: dtStart
-                      Type: BaseDataVariableType
-                      DataType: DateTime
-                      Children:
-                      - Name: DynamicLink
-                        Type: DynamicLink
-                        DataType: NodePath
-                        Value: "../../../../../../dtStart/Value"
-                    - Name: dtEnd
-                      Type: BaseDataVariableType
-                      DataType: DateTime
-                      Children:
-                      - Name: DynamicLink
-                        Type: DynamicLink
-                        DataType: NodePath
-                        Value: "../../../../../../dtEnd/Value"
-                    - Name: nResultId
-                      Type: BaseDataVariableType
-                      DataType: NodeId
-                      Children:
-                      - Name: DynamicLink
-                        Type: DynamicLink
-                        DataType: NodePath
-                        Value: "../../../../../../../../../NewPdfPath@NodeId"
-              - Name: EventArguments
-                Type: MouseClickEvent
-                Children:
-                - Name: EventId
-                  Type: PropertyType
-                  DataType: ByteString
-                - Name: EventType
-                  Type: PropertyType
-                  DataType: NodeId
-                - Name: SourceNode
-                  Type: PropertyType
-                  DataType: NodeId
-                - Name: SourceName
-                  Type: PropertyType
-                  DataType: String
-                - Name: Time
-                  Type: PropertyType
-                  DataType: UtcTime
-                - Name: ReceiveTime
-                  Type: PropertyType
-                  DataType: UtcTime
-                - Name: Message
-                  Type: PropertyType
-                  DataType: LocalizedText
-                - Name: Severity
-                  Type: PropertyType
-                  DataType: UInt16
-          - Name: L1
-            Type: Rectangle
-          - Name: Label4
-            Type: Label
-          - Name: Label5
-            Type: Label
-          - Name: cbBatchNo
-            Type: ComboBox
-            Children:
-            - Name: Text
-              Type: BaseDataVariableType
-              DataType: LocalizedText
-            - Name: Model
-              Type: NodePointer
-              DataType: NodeId
-              Value: "/Objects/ReportPro/DataStores/EmbeddedDatabase1"
-              Children:
-              - Name: ItemKind
-                Type: PropertyType
-                DataType: NodeId
-              - Name: Kind
-                Type: PropertyType
-                DataType: NodeId
-            - Name: SelectedValue
-              Type: BaseDataVariableType
-              DataType: BaseDataType
-            - Name: SelectedItem
-              Type: NodePointer
-              DataType: NodeId
-              Children:
-              - Name: Kind
-                Type: PropertyType
-                DataType: NodeId
-            - Name: UISelectedItem
-              Type: BaseDataVariableType
-              DataType: NodeId
-              AccessLevel: Read
-            - Name: UISelectedValue
-              Type: BaseDataVariableType
-              DataType: BaseDataType
-              AccessLevel: Read
-            - Class: Reference
-              Target: ns=3;i=480
-              Direction: Forward
-            - Name: Item
-              Type: Alias
-              DataType: NodeId
-              Children:
-              - Name: Kind
-                Type: PropertyType
-                DataType: NodeId
-            - Name: DisplayValuePath
-              Type: BaseDataVariableType
-              DataType: LocalizedText
-              Value: {"LocaleId":"en-US","Text":""}
-              Children:
-              - Name: DynamicLink
-                Type: DynamicLink
-                DataType: NodePath
-                Value: "{Item}/BatchNo"
-            - Name: SelectedValuePath
-              Type: BaseDataVariableType
-              DataType: BaseDataType
-              Children:
-              - Name: DynamicLink
-                Type: DynamicLink
-                DataType: NodePath
-                Value: "{Item}/BatchNo"
-          - Name: btQueryWithBatch
-            Type: Button
-            Children:
-            - Name: MouseClickEventHandler1
-              Type: EventHandler
-              Children:
-              - Name: ListenEventType
-                Type: PropertyType
-                DataType: NodeId
-                Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
-              - Name: MethodsToCall
-                Type: BaseObjectType
-                Children:
-                - Name: MethodContainer1
-                  Type: BaseObjectType
-                  Children:
-                  - Name: ObjectPointer
-                    Type: NodePointer
-                    DataType: NodeId
-                    Value: "/Objects/ReportPro/Reports/Report_BatchRange/Report_BatchRange_RuntimeNetLogic"
-                    Children:
-                    - Name: Kind
-                      Type: PropertyType
-                      DataType: NodeId
-                      Value: "/Types/ObjectTypes/BaseObjectType"
-                  - Name: Method
-                    Type: BaseDataVariableType
-                    DataType: String
-                    Value: "Query"
-                  - Name: InputArguments
-                    Type: BaseObjectType
-                    Children:
-                    - Name: outputPdfFolder
-                      Type: BaseDataVariableType
-                      DataType: String
-                      Value: "pdfs/temp"
-                    - Name: batchNo
-                      Type: BaseDataVariableType
-                      DataType: String
-                      Children:
-                      - Name: DynamicLink
-                        Type: DynamicLink
-                        DataType: NodePath
-                        Value: "../../../../../../cbBatchNo/SelectedValue"
-                    - Name: nResultId
-                      Type: BaseDataVariableType
-                      DataType: NodeId
-                      Children:
-                      - Name: DynamicLink
-                        Type: DynamicLink
-                        DataType: NodePath
-                        Value: "../../../../../../../../../NewPdfPath@NodeId"
-              - Name: EventArguments
-                Type: MouseClickEvent
-                Children:
-                - Name: EventId
-                  Type: PropertyType
-                  DataType: ByteString
-                - Name: EventType
-                  Type: PropertyType
-                  DataType: NodeId
-                - Name: SourceNode
-                  Type: PropertyType
-                  DataType: NodeId
-                - Name: SourceName
-                  Type: PropertyType
-                  DataType: String
-                - Name: Time
-                  Type: PropertyType
-                  DataType: UtcTime
-                - Name: ReceiveTime
-                  Type: PropertyType
-                  DataType: UtcTime
-                - Name: Message
-                  Type: PropertyType
-                  DataType: LocalizedText
-                - Name: Severity
-                  Type: PropertyType
-                  DataType: UInt16
-          - Name: L2
-            Type: Rectangle
-          - Name: Label6
-            Type: Label
-          - Name: txtBatchNoInput
-            Type: TextBox
-            Children:
-            - Name: Text
-              Type: BaseDataVariableType
-              DataType: LocalizedText
-              Children:
-              - Name: DynamicLink
-                Type: DynamicLink
-                DataType: NodePath
-                Value: "/Objects/ReportPro/Model/TestData/BatchNo"
-        - Name: btQueryDemo
-          Type: Button
-          Children:
-          - Name: MouseClickEventHandler1
-            Type: EventHandler
-            Children:
-            - Name: ListenEventType
-              Type: PropertyType
-              DataType: NodeId
-              Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
-            - Name: MethodsToCall
-              Type: BaseObjectType
-              Children:
-              - Name: MethodContainer1
-                Type: BaseObjectType
-                Children:
-                - Name: ObjectPointer
-                  Type: NodePointer
-                  DataType: NodeId
-                  Value: "/Objects/ReportPro/Reports/Report_Demo/Report_Demo_RuntimeNetLogic"
-                  Children:
-                  - Name: Kind
-                    Type: PropertyType
-                    DataType: NodeId
-                    Value: "/Types/ObjectTypes/BaseObjectType"
-                - Name: Method
-                  Type: BaseDataVariableType
-                  DataType: String
-                  Value: "QueryAndRender"
-                - Name: InputArguments
-                  Type: BaseObjectType
-                  Children:
-                  - Name: outputPdfFolder
-                    Type: BaseDataVariableType
-                    DataType: String
-                    Value: "pdfs/temp"
-                  - Name: nResultId
-                    Type: BaseDataVariableType
-                    DataType: NodeId
-                    Children:
-                    - Name: DynamicLink
-                      Type: DynamicLink
-                      DataType: NodePath
-                      Value: "../../../../../../../../NewPdfPath@NodeId"
-            - Name: EventArguments
-              Type: MouseClickEvent
-              Children:
-              - Name: EventId
-                Type: PropertyType
-                DataType: ByteString
-              - Name: EventType
-                Type: PropertyType
-                DataType: NodeId
-              - Name: SourceNode
-                Type: PropertyType
-                DataType: NodeId
-              - Name: SourceName
-                Type: PropertyType
-                DataType: String
-              - Name: Time
-                Type: PropertyType
-                DataType: UtcTime
-              - Name: ReceiveTime
-                Type: PropertyType
-                DataType: UtcTime
-              - Name: Message
-                Type: PropertyType
-                DataType: LocalizedText
-              - Name: Severity
-                Type: PropertyType
-                DataType: UInt16
-      - Name: Rectangle1
-        Type: Rectangle
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container"
+      - Name: Panel2
+        Type: NavigationPanelItem
         Children:
-        - Name: PDFViewer1
-          Type: PdfViewer
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+        - Name: Panel
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/ReportPro/UI/Screens/ChartToSvg"
           Children:
-          - Name: Path
-            Type: BaseDataVariableType
-            DataType: ResourceUri
-            Children:
-            - Name: DynamicLink
-              Type: DynamicLink
-              DataType: NodePath
-              Value: "../../../../NewPdfPath"
-          - Name: CurrentPage
-            Type: BaseDataVariableType
-            DataType: Int32
-    - Name: NewPdfPath
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container"
+    - Name: CurrentPanel
+      Type: NodePointer
+      DataType: NodeId
+      AccessLevel: Read
+      Children:
+      - Name: Kind
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item"
+    - Name: CurrentTabIndex
       Type: BaseDataVariableType
-      DataType: ResourceUri
-    - Name: TopMargin
+      DataType: Int32
+    - Class: Reference
+      Target: ns=3;i=1181
+      Direction: Forward
+    - Class: Reference
+      Target: ns=3;i=1183
+      Direction: Forward
+    - Name: Width
       Type: BaseVariableType
       DataType: Size
+      ModellingRule: Optional
+      Value: 300.0
+    - Name: Height
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 300.0
+    - Name: HorizontalAlignment
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 3
+    - Name: VerticalAlignment
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+      Value: 3
 - File: Screens/Screens.yaml

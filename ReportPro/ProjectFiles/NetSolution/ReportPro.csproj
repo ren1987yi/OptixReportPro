@@ -16,7 +16,9 @@
     <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.ClearScript" Version="7.4.5"/>
+    <PackageReference Include="EChartDotNet" Version="0.0.1.1" />
+    <PackageReference Include="EChartSSR" Version="0.0.1.4-beta" />
+    <PackageReference Include="Microsoft.ClearScript" Version="7.4.5" />
   </ItemGroup>
-  <Import Project="ReportPro.references"/>
+  <Import Project="ReportPro.references" />
 </Project>
