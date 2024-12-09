@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -17,7 +17,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="EChartDotNet" Version="0.0.1.1" />
-    <PackageReference Include="EChartSSR" Version="0.0.1.4-beta" />
+    <PackageReference Include="EChartSSR" Version="0.0.1.4" />
     <PackageReference Include="Microsoft.ClearScript" Version="7.4.5" />
   </ItemGroup>
   <Import Project="ReportPro.references" />
